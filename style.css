@@ -1,0 +1,425 @@
+@import url('https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&family=Archivo:ital,wght@0,300;0,400;0,500;0,600;0,900;1,300;1,400;1,500&family=Quicksand:wght@300;400;500;600;700&family=Righteous&family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500&display=swap');
+
+
+:root {
+    font-size: 15px;
+    --black: #060606;
+    --white: #FFFFFF;
+    --yellow: #FFDC27;
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto';
+}
+
+body {
+  font-family: sans-serif;
+  overflow: hidden;
+  background-color: var(--black);
+}
+
+.scene,
+canvas {
+    position: absolute;
+    top: 3rem;
+    left: 5rem;
+    right: 5rem;
+    width: 90%;
+    height: 90%;
+    cursor: pointer;
+    cursor: all-scroll;
+    overflow: hidden;
+    outline: none;
+    border: none;
+    
+}
+
+.mario,
+canvas {
+  position: absolute;
+  top: 3rem;
+  left: 0;
+  right: 5rem;
+  width: 100%;
+  height: 90%;
+  cursor: pointer;
+  cursor: all-scroll;
+  overflow: hidden;
+  outline: none;
+  border: none;
+  opacity: 100%;
+
+
+}
+
+button {
+    padding: .8rem;
+    background-color:var(--yellow);
+    border: none;
+    border-radius: 1.5em;
+    width: 10em;
+    height: 3.5em;
+    font-size: 1em;
+    font-weight: 500;
+    
+}
+
+button.back {
+    background-color: rgb(70, 70, 70);
+    color: var(--white);
+}
+
+button.back a {color: rgb(199, 199, 199);}
+
+    /*| Video Code from https://codepen.io/codeconvey/pen/rjOxON |*/
+    video {
+        position: absolute;
+        left: 0;
+        width: 100% !important;
+        height: 100vh;
+        z-index: -999999;
+        -o-object-fit: cover;
+           object-fit: cover;
+        -o-object-position: center;
+           object-position: center;
+           opacity: 20%;    
+    }
+
+    video.mario {
+        opacity: 50%;
+    }
+
+a {
+    text-decoration: none;
+    color: var(--black);
+}
+
+.credits{
+    position: fixed;
+    right: 1em;
+    color: gray;
+    font-style: italic;
+}
+
+/******************************
+        HEADER
+******************************/
+
+header {
+    background-color: var(--black);
+    text-transform: uppercase;
+    padding: 1em 0;
+    position: fixed;
+    width: 100vw;
+}
+
+
+header .logo {
+    background: url('images/kaleido.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 12rem;
+    height: 5rem;
+    align-items: center;
+    
+}
+
+header > div {
+    max-width: 1300px;
+    padding: 0 2em;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+}
+
+nav ul li a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.05rem;
+    letter-spacing: 0.05em;
+    padding: 1em;
+}
+
+nav ul li:last-of-type a {
+    padding-right: 0px;
+}
+
+/******************************
+        MAIN
+******************************/
+
+main{
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 2em;
+}
+
+section {
+    padding: 5em;
+    margin: 10rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 5em;
+}
+
+
+
+section aside {
+    align-items: center;
+    text-align: center;
+}
+
+aside.movies {
+    text-align: left;
+    position: fixed;
+    bottom: 5em;
+    left: 10em;
+}
+
+aside.movies h1 {
+    margin-bottom: .5em;
+}
+
+section aside h1 {
+    font-size: 2.5rem;
+    background: linear-gradient(to right, #eaf9fc, #d2ed71, #ebff99);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: .5em;
+
+}
+
+section aside h2 {
+    color: var(--white);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-weight: 300;
+    margin-bottom: .5em;
+} 
+
+/******* CARDS ********/
+
+.cards {
+    display: flex;
+    gap:5rem;
+    justify-content: center;
+    height: 25rem;
+}
+
+.cards .card {
+    border-radius: 1rem;
+    background-color: var(--white);
+    padding: 5em 3em;
+    text-align: LEFT;
+    width: 100%;
+    opacity: 90%;
+}
+
+.cards .card h3{
+    margin-bottom: 1em;
+    color: var(--black);
+}
+
+.cards .card p {
+    color: var(--black);
+    font-size: 1rem;
+    line-height: 2em;
+}
+
+.cards .card i {
+    font-size: 2rem;
+    margin-bottom: 1em;
+}
+
+div#minion {border-bottom: 8px solid yellow;}
+div#minion h3{
+    font-size: 1.5em;
+    padding-left: .5em;
+    border-left: 5px solid rgb(190, 190, 0);}
+
+div#mario {border-bottom: 8px solid red;}
+div#mario h3{
+    font-size: 1.5em;
+    padding-left: .5em;
+    border-left: 5px solid rgb(196, 0, 0);}
+
+div#lorax {border-bottom: 8px solid orange;}
+div#lorax h3{
+    font-size: 1.5em;
+    padding-left: .5em;
+    border-left: 5px solid rgb(196, 111, 0);}
+
+/******************************
+        FOOTER
+******************************/
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    background-color: var(--black);
+}
+
+footer p {
+    font-size: .8em;
+    color: var(--white);
+    text-align: center;
+    padding: .5em;
+}
+
+
+/******************************
+        RESPONSIVE
+******************************/
+
+@media (max-width: 700px) {
+
+    :root {
+        font-size: 13px;
+    }
+
+    .cards {
+        flex-direction: column;
+    }
+
+    header {
+        position: sticky;
+        top: 0px;
+    }
+
+    header .hamburger {
+        display: block;
+    }
+
+    header nav {
+        transition: height 600ms ease-in-out;
+        height: 0;
+        overflow: hidden;
+        flex: 0 0 100%;
+    }
+
+    header nav ul{
+        flex-wrap: nowrap;
+        justify-content: center;
+        flex-direction: column;
+        display: flex;
+        width: 100%;
+    }
+
+    header nav ul li:last-of-type{
+        margin-bottom: 0.75em;
+    }
+
+    header nav ul li a {
+        background-color: rgba(255,255,255,0.1);
+        padding: 0.65em;
+        margin: 0.5em 0em;
+        display: block;
+    }
+
+    header > div {
+        padding: 0 2em;
+        flex: wrap;
+    }
+
+}
+
+
+
+/* contact form from w3 schools */
+.row {
+    display: -ms-flexbox; /* IE10 */
+    display: flex;
+    -ms-flex-wrap: wrap; /* IE10 */
+    flex-wrap: wrap;
+    margin: 0 -16px;
+  }
+  
+  .col-25 {
+    -ms-flex: 25%; /* IE10 */
+    flex: 25%;
+  }
+  
+  .col-50 {
+    -ms-flex: 50%; /* IE10 */
+    flex: 50%;
+  }
+  
+  .col-75 {
+    -ms-flex: 75%; /* IE10 */
+    flex: 75%;
+  }
+  
+  .col-25,
+  .col-50,
+  .col-75 {
+    padding: 0 16px;
+  }
+  
+  .container {
+    background-color: #f2f2f2;
+    padding: 5px 20px 15px 20px;
+    border: 1px solid lightgrey;
+    border-radius: 3px;
+  }
+  
+  input[type=text] {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  
+  label {
+    margin-bottom: 10px;
+    display: block;
+  }
+  
+  .icon-container {
+    margin-bottom: 20px;
+    padding: 7px 0;
+    font-size: 24px;
+  }
+  
+  .btn {
+    background-color: var(--yellow);
+    color: var(--black);
+    padding: 12px;
+    margin: 10px 0;
+    border: none;
+    width: 100%;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 17px;
+  }
+  
+  .btn:hover {
+    background-color: #45a049;
+  }
+  
+  span.price {
+    float: right;
+    color: grey;
+  }
+  
+  /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other (and change the direction - make the "cart" column go on top) */
+  @media (max-width: 800px) {
+    .row {
+      flex-direction: column-reverse;
+    }
+    .col-25 {
+      margin-bottom: 20px;
+    }
+  }
